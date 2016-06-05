@@ -1,0 +1,22 @@
+!!!
+%html
+%head
+  %title Forum App
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  %link{ rel: "stylesheet", href: "http://fonts.googleapis.com/css?family=Lato:300,400,700", type: "text/css"}
+  %link{ rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css"}
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+%body
+  %header.main_header.clearfix
+    .wrapper
+      #logo
+        %p Forum App
+      #buttons
+        = link_to "New Post", new_post_path
+  .wrapper
+    %p.notice= notice
+    %p.alert= alert
+  .wrapper
+    = yield
